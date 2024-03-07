@@ -97,14 +97,6 @@ const UserForm = ({ handleUserData, update, updateHandler }) => {
         >
           Submit
         </button>
-
-        {/* <button
-          type="submit"
-          className="bg-green-800 px-3 py-1 text-white rounded-md"
-          onClick={handleUpdate}
-        >
-          Update
-        </button> */}
         <button
           type="reset"
           value="reset"
@@ -113,6 +105,29 @@ const UserForm = ({ handleUserData, update, updateHandler }) => {
         >
           Clear
         </button>
+        {/* {(user == "") ? (
+          <button
+            type="submit"
+            className="bg-green-800 px-3 py-1 text-white rounded-md"
+          >
+            Submit
+          </button>
+        ) : (
+        <button
+          type="submit"
+          className="bg-green-800 px-3 py-1 text-white rounded-md"
+        >
+          Update
+        </button>
+        <button
+          type="reset"
+          value="reset"
+          onClick={hendleClear}
+          className="bg-red-800 px-3 py-1 text-white rounded-md"
+        >
+          Clear
+        </button>
+        )} */}
 
       </div>
     </form>

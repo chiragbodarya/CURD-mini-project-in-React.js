@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import UserForm from './component/UserForm';
-import Table from './component/UserTable';
+import UserTable from './component/UserTable';
+// import NewTable from './component/NewTable';
 
 const App = () => {
   const [arr, setArr] = useState([]);
@@ -31,7 +32,7 @@ const App = () => {
   const updateData = (data) => {
     const userList = [...arr];
     userList.forEach((upo, index) => {
-      if (upo.id == data.id) {  
+      if (upo.id == data.id) {
         userList[index] = data
       }
     });
@@ -40,14 +41,18 @@ const App = () => {
 
 
   return (
-    <div className='flex flex-wrap justify-center gap-20 pt-20 '>
-      <div className='border-2 border-[#000] bg-[] p-4 '>
-        <UserForm handleUserData={getData} update={update} updateHandler={updateData} />
+    <>
+      <div className='flex justify-center items-center w-[100vw] h-[100vh]'>
+        <div className='flex flex-wrap justify-center gap-10 '>
+          <div className='border-2 border-[#000] bg-[] p-4 flex justify-center items-center'>
+            <UserForm handleUserData={getData} update={update} updateHandler={updateData} />
+          </div>
+          <div className='border-2 border-[#000] bg-[] p-4 '>
+            <UserTable showFormData={arr} handleDelete={handleDelete} handleEdit={handleEdit} />
+          </div>
+        </div>
       </div>
-      <div className='border-2 border-[#000] bg-[] p-4 '>
-        <Table showFormData={arr} handleDelete={handleDelete} handleEdit={handleEdit} />
-      </div>
-    </div>
+    </>
   )
 }
 
